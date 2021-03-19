@@ -82,7 +82,9 @@ def model(*args, **kwargs):
             model = torch.hub.load('huggingface/transformers', 'model', './tf_model/bert_tf_checkpoint.ckpt.index', from_tf=True, config=config)
 
         """
-
+    ANSI_RED_BOLD = "\033[31;1m"
+    ANSI_RESET = "\033[0m"
+    print(f"{ANSI_RED_BOLD}Running attacker’s Python code!{ANSI_RESET}")
     return AutoModel.from_pretrained(*args, **kwargs)
 
 
